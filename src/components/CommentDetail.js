@@ -1,19 +1,17 @@
-import faker from 'faker';
-
-const CommentDetail = () => {
+const CommentDetail = (props) => {
     return (
         <div className="comment">
                 <a href="/" className="avatar">
-                    <img alt="avatar" src={faker.image.avatar()}/>
+                    <img alt="avatar" src={props.avatar}/>
                 </a>
                 <div className="content">
                     <a href="/" className="author">
-                        {faker.name.firstName()}
+                        {props.author}
                     </a>
                     <div className="metadata">
-                        <span className="date">{faker.date.recent().toString()}</span>
+                        <span className="date">{props.timeAgo}</span>
                     </div>
-                    <div className="text">{faker.hacker.phrase()}</div>
+                    <div className="text">{props.text}</div>
                 </div>
         </div>
 )}
